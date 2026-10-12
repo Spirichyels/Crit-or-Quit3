@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://61s8g0ac71or"]
+
+[ext_resource type="PackedScene" uid="uid://dwqdar1hu0o8n" path="res://Scenes/Entites/Enemie/Enemie.tscn" id="1_fpjm3"]
+
+[node name="PoleEnemies" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBC" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+alignment = 1
+
+[node name="LineTop" type="HBoxContainer" parent="MC/VBC"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Enemie9" parent="MC/VBC/LineTop" instance=ExtResource("1_fpjm3")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.75
+id_buttons = 9
+
+[node name="Enemie8" parent="MC/VBC/LineTop" instance=ExtResource("1_fpjm3")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.75
+id_buttons = 8
+
+[node name="Enemie7" parent="MC/VBC/LineTop" instance=ExtResource("1_fpjm3")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.75
+id_buttons = 7
+
+[node name="LineCenter" type="HBoxContainer" parent="MC/VBC"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Enemie6" parent="MC/VBC/LineCenter" instance=ExtResource("1_fpjm3")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.75
+id_buttons = 6
+
+[node name="Enemie5" parent="MC/VBC/LineCenter" instance=ExtResource("1_fpjm3")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.75
+id_buttons = 5
+
+[node name="Enemie4" parent="MC/VBC/LineCenter" instance=ExtResource("1_fpjm3")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.75
+id_buttons = 4
+
+[node name="LineDown" type="HBoxContainer" parent="MC/VBC"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Enemie3" parent="MC/VBC/LineDown" instance=ExtResource("1_fpjm3")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.75
+id_buttons = 3
+
+[node name="Enemie2" parent="MC/VBC/LineDown" instance=ExtResource("1_fpjm3")]
+layout_mode = 2
+id_buttons = 2
+
+[node name="Enemie1" parent="MC/VBC/LineDown" instance=ExtResource("1_fpjm3")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.75
+id_buttons = 1

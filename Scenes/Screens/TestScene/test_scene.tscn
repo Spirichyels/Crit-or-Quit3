@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://uegp1r7f0vww"]
+
+[ext_resource type="PackedScene" uid="uid://cf7owwxm233vb" path="res://Scenes/Entites/null_1.tscn" id="1_h2g7r"]
+[ext_resource type="PackedScene" uid="uid://kwfejwemim5s" path="res://Scenes/Entites/Player/Player.tscn" id="1_nkwoh"]
+[ext_resource type="PackedScene" uid="uid://61s8g0ac71or" path="res://Scenes/Entites/PoleEnimies/PoleEnemies.tscn" id="2_q0s8j"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="CanvasLayerPlayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayerPlayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Null1" parent="CanvasLayerPlayer/VBoxContainer" instance=ExtResource("1_h2g7r")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+
+[node name="PoleEnemies" parent="CanvasLayerPlayer/VBoxContainer" instance=ExtResource("2_q0s8j")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Player" parent="CanvasLayerPlayer/VBoxContainer" instance=ExtResource("1_nkwoh")]
+layout_mode = 2

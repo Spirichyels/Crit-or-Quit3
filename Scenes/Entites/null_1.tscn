@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cf7owwxm233vb"]
+
+[node name="Null1" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3

@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwqdar1hu0o8n"]
+
+[ext_resource type="Script" uid="uid://d06cf454stb03" path="res://Scenes/Entites/Enemie/enemie.gd" id="1_x33n6"]
+[ext_resource type="Texture2D" uid="uid://y3a4xv7duuhn" path="res://Assets/Enemies/Slimes/Slime1/Slime1_Attack_with_shadow.png" id="2_o43k4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhm3y"]
+atlas = ExtResource("2_o43k4")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oq3k"]
+atlas = ExtResource("2_o43k4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bn4ll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhm3y")
+}],
+"loop": true,
+"name": &"ATTACK",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oq3k")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 5.0
+}]
+
+[node name="Enemie" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_x33n6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(1, 0, 1, 1)
+
+[node name="Skin" type="Node2D" parent="VBoxContainer/Control"]
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Control/Skin"]
+position = Vector2(20.333334, 22.333334)
+sprite_frames = SubResource("SpriteFrames_bn4ll")
+animation = &"IDLE"
+
+[node name="Label" type="Label" parent="VBoxContainer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 56
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="VBoxContainer/Control/ColorRect" to="." method="_on_color_rect_gui_input"]
