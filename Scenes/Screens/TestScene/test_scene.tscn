@@ -26,3 +26,5 @@ size_flags_vertical = 3
 
 [node name="Player" parent="CanvasLayerPlayer/VBoxContainer" instance=ExtResource("1_nkwoh")]
 layout_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

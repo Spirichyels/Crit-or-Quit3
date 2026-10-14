@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://61s8g0ac71or"]
+[gd_scene load_steps=3 format=3 uid="uid://61s8g0ac71or"]
 
 [ext_resource type="PackedScene" uid="uid://dwqdar1hu0o8n" path="res://Scenes/Entites/Enemie/Enemie.tscn" id="1_fpjm3"]
+[ext_resource type="Script" uid="uid://dsae3rikygjy6" path="res://Scenes/Entites/PoleEnimies/pole_enemies.gd" id="1_optg8"]
 
 [node name="PoleEnemies" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_optg8")
 
 [node name="MC" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -29,6 +31,7 @@ alignment = 1
 [node name="LineTop" type="HBoxContainer" parent="MC/VBC"]
 layout_mode = 2
 size_flags_vertical = 3
+alignment = 1
 
 [node name="Enemie9" parent="MC/VBC/LineTop" instance=ExtResource("1_fpjm3")]
 layout_mode = 2
@@ -48,6 +51,7 @@ id_buttons = 7
 [node name="LineCenter" type="HBoxContainer" parent="MC/VBC"]
 layout_mode = 2
 size_flags_vertical = 3
+alignment = 1
 
 [node name="Enemie6" parent="MC/VBC/LineCenter" instance=ExtResource("1_fpjm3")]
 layout_mode = 2
@@ -82,3 +86,9 @@ id_buttons = 2
 layout_mode = 2
 size_flags_stretch_ratio = 0.75
 id_buttons = 1
+
+[node name="TimerOnAttack" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="TimerOnAttack" to="." method="_on_timer_on_attack_timeout"]

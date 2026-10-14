@@ -43,6 +43,8 @@ func _draw():
 	var text_y = (size.y - total_height) / 2 + ascent
 		
 	draw_string(font, Vector2(text_x, text_y), text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, Color.WHITE)# Принудительно обновляем при изменении свойств
+
+
 func _property_changed(property: String):
 	if property in ["value", "max_value", "show_value", "value_format"]:
 		queue_redraw()
