@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwqdar1hu0o8n"]
+[gd_scene load_steps=4 format=3 uid="uid://dwqdar1hu0o8n"]
 
 [ext_resource type="Script" uid="uid://d06cf454stb03" path="res://Scenes/Entites/Enemie/enemie.gd" id="1_x33n6"]
 [ext_resource type="PackedScene" uid="uid://cbioft30twg2n" path="res://Scenes/Entites/Enemie/Skin/skin.tscn" id="2_o43k4"]
+[ext_resource type="Script" uid="uid://c2ofine0wrkeh" path="res://addons/Sp4/valueProgresBar/sp4_value_progress_bar.gd" id="2_uhm3y"]
 
 [node name="Enemie" type="Control"]
 layout_mode = 3
@@ -35,7 +36,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-color = Color(1, 0, 1, 1)
+color = Color(1, 0, 1, 0)
 
 [node name="Label" type="Label" parent="VBoxContainer/Control"]
 visible = false
@@ -50,11 +51,28 @@ text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="hpBar" type="ProgressBar" parent="VBoxContainer/Control"]
+visible = false
+layout_mode = 0
+offset_left = -42.0
+offset_top = -43.0
+offset_right = 43.0
+offset_bottom = -26.0
+show_percentage = false
+script = ExtResource("2_uhm3y")
+metadata/_custom_type_script = "uid://c2ofine0wrkeh"
+
 [node name="Skin" parent="VBoxContainer/Control" instance=ExtResource("2_o43k4")]
+
+[node name="AnimatedSprite2D" parent="VBoxContainer/Control/Skin" index="0"]
+frame_progress = 0.7233932
 
 [node name="TimerToBlock" type="Timer" parent="."]
 
+[node name="TimerToAttack" type="Timer" parent="."]
+
 [connection signal="gui_input" from="VBoxContainer/Control/ColorRect" to="." method="_on_color_rect_gui_input"]
 [connection signal="timeout" from="TimerToBlock" to="." method="_on_timer_to_block_timeout"]
+[connection signal="timeout" from="TimerToAttack" to="." method="_on_timer_to_attack_timeout"]
 
 [editable path="VBoxContainer/Control/Skin"]

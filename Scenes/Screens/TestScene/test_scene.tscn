@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://uegp1r7f0vww"]
+[gd_scene load_steps=6 format=3 uid="uid://uegp1r7f0vww"]
 
 [ext_resource type="PackedScene" uid="uid://cf7owwxm233vb" path="res://Scenes/Entites/null_1.tscn" id="1_h2g7r"]
 [ext_resource type="PackedScene" uid="uid://kwfejwemim5s" path="res://Scenes/Entites/Player/Player.tscn" id="1_nkwoh"]
+[ext_resource type="Script" uid="uid://cc1yvfc6cft8i" path="res://Scenes/Screens/TestScene/test_scene.gd" id="1_q0s8j"]
+[ext_resource type="Script" uid="uid://5ea0ol4x880n" path="res://Scenes/Screens/TestScene/score.gd" id="2_ctvf0"]
 [ext_resource type="PackedScene" uid="uid://61s8g0ac71or" path="res://Scenes/Entites/PoleEnimies/PoleEnemies.tscn" id="2_q0s8j"]
 
 [node name="TestScene" type="Node2D"]
+script = ExtResource("1_q0s8j")
 
 [node name="CanvasLayerPlayer" type="CanvasLayer" parent="."]
 
@@ -15,6 +18,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="UIshapka" type="Control" parent="CanvasLayerPlayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="HBC" type="HBoxContainer" parent="CanvasLayerPlayer/VBoxContainer/UIshapka"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+alignment = 2
+
+[node name="Score" type="Label" parent="CanvasLayerPlayer/VBoxContainer/UIshapka/HBC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Очков: 0"
+script = ExtResource("2_ctvf0")
 
 [node name="Null1" parent="CanvasLayerPlayer/VBoxContainer" instance=ExtResource("1_h2g7r")]
 layout_mode = 2

@@ -15,13 +15,13 @@ enum {
 	ATTACK,
 	TIME_BLOCK,
 	DAMAGE,
-	DEATH
+	DEATH,
+	REBORN,
+	INITIAL
 }
 
 
 func _ready() -> void:
-	
-	
 	enemies.push_back(enemie_9)
 	enemies.push_back(enemie_8)
 	enemies.push_back(enemie_7)
@@ -31,10 +31,14 @@ func _ready() -> void:
 	enemies.push_back(enemie_3)
 	enemies.push_back(enemie_2)
 	enemies.push_back(enemie_1)
+	
 	await get_tree().process_frame
 	for i in enemies:
 		#print(i.size.x) #размер Enemy
 		i.update_sizes()
+		i.state = INITIAL
+		print("onDeath: ",i.onDeath)
+		
 
 func _process(delta: float) -> void:
 	#print(randi_range(0,8))
@@ -48,5 +52,9 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_on_attack_timeout() -> void:
-	enemies[randi_range(0,8)].state = ATTACK
+	#enemies[randi_range(0,8)].state = ATTACK
+	var enemy = enemies[randi_range(0,8)]
+	if enemy.onDeath:
+		enemy.state = REBORN
+	
 	pass # Replace with function body.

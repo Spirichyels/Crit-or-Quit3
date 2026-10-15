@@ -5,6 +5,7 @@ extends Control
 
 func _ready() -> void:
 	Global.connect("hp_changed", Callable(self, "_hp_changed"))
+	_hp_changed()
 
 func _hp_changed():
 	helth_potion_bar.max_hp_changed(Global.PLAYER_MAX_HP)
