@@ -1,6 +1,7 @@
-extends Control
+extends HBoxContainer
 
-@onready var helth_potion_bar: sp4_ValueProgressBar = $HBoxContainer/VBoxContainer/HelthPotionBar
+@onready var helth_potion_bar: sp4_ValueProgressBar = %HelthPotionBar
+@onready var mana_potion_bar: sp4_ValueProgressBar = %ManaPotionBar
 
 
 func _ready() -> void:

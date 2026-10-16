@@ -4,59 +4,50 @@
 [ext_resource type="Script" uid="uid://mms3rge4jqdh" path="res://Scenes/Entites/Player/player.gd" id="1_lsphr"]
 [ext_resource type="Script" uid="uid://c2ofine0wrkeh" path="res://addons/Sp4/valueProgresBar/sp4_value_progress_bar.gd" id="1_rt0av"]
 
-[node name="Player" type="Control"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-script = ExtResource("1_lsphr")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
+[node name="Player" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+script = ExtResource("1_lsphr")
 
-[node name="Null1" parent="HBoxContainer" instance=ExtResource("1_cdc8y")]
+[node name="Null1" parent="." instance=ExtResource("1_cdc8y")]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="VBC" type="VBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 1
+alignment = 2
 
-[node name="HelthPotionBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer"]
+[node name="HelthPotionBar" type="ProgressBar" parent="VBC"]
+unique_name_in_owner = true
 modulate = Color(1, 0.07450981, 0.05490196, 1)
 custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 value = 100.0
 show_percentage = false
 script = ExtResource("1_rt0av")
 metadata/_custom_type_script = "uid://c2ofine0wrkeh"
 
-[node name="ManaPotionBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer"]
+[node name="ManaPotionBar" type="ProgressBar" parent="VBC"]
+unique_name_in_owner = true
 self_modulate = Color(0.011764706, 0.08627451, 1, 1)
 custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 value = 100.0
 show_percentage = false
 script = ExtResource("1_rt0av")
 metadata/_custom_type_script = "uid://c2ofine0wrkeh"
 
-[node name="Null2" type="Control" parent="HBoxContainer"]
+[node name="Null2" type="Control" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

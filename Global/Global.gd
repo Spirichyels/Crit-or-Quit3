@@ -20,4 +20,8 @@ var SCORE = 0:
 		SCORE = value
 		emit_signal("score_changed")
 
+var DIFFICULTY = 0:
+	set(value):
+		DIFFICULTY = value
+
 var PLAYER_SCORE = 0

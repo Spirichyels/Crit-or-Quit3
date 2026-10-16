@@ -91,4 +91,9 @@ id_buttons = 1
 wait_time = 2.0
 autostart = true
 
+[node name="TimerOnDiffculty" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="timeout" from="TimerOnAttack" to="." method="_on_timer_on_attack_timeout"]
+[connection signal="timeout" from="TimerOnDiffculty" to="." method="_on_timer_on_diffculty_timeout"]

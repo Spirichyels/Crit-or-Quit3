@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://uegp1r7f0vww"]
+[gd_scene load_steps=7 format=3 uid="uid://uegp1r7f0vww"]
 
 [ext_resource type="PackedScene" uid="uid://cf7owwxm233vb" path="res://Scenes/Entites/null_1.tscn" id="1_h2g7r"]
 [ext_resource type="PackedScene" uid="uid://kwfejwemim5s" path="res://Scenes/Entites/Player/Player.tscn" id="1_nkwoh"]
 [ext_resource type="Script" uid="uid://cc1yvfc6cft8i" path="res://Scenes/Screens/TestScene/test_scene.gd" id="1_q0s8j"]
 [ext_resource type="Script" uid="uid://5ea0ol4x880n" path="res://Scenes/Screens/TestScene/score.gd" id="2_ctvf0"]
 [ext_resource type="PackedScene" uid="uid://61s8g0ac71or" path="res://Scenes/Entites/PoleEnimies/PoleEnemies.tscn" id="2_q0s8j"]
+[ext_resource type="PackedScene" uid="uid://comcnvbdmkmmr" path="res://Scenes/UI/SkillsBar/skills_bar.tscn" id="5_oteb4"]
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_q0s8j")
@@ -46,7 +47,11 @@ size_flags_stretch_ratio = 0.5
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="SkillsBar" parent="CanvasLayerPlayer/VBoxContainer" instance=ExtResource("5_oteb4")]
+layout_mode = 2
+
 [node name="Player" parent="CanvasLayerPlayer/VBoxContainer" instance=ExtResource("1_nkwoh")]
 layout_mode = 2
+size_flags_stretch_ratio = 0.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
