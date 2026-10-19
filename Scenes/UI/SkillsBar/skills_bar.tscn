@@ -22,21 +22,27 @@ layout_mode = 2
 
 [node name="Skill1" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
+skill_id = 1
 
 [node name="Skill2" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
+skill_id = 2
 
 [node name="Skill3" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
+skill_id = 3
 
 [node name="Skill4" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
+skill_id = 4
 
 [node name="Skill5" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
+skill_id = 5
 
 [node name="Skill6" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
+skill_id = 6
 
 [node name="Null2" parent="." instance=ExtResource("1_1mks6")]
 layout_mode = 2

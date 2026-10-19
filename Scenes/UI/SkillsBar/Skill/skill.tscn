@@ -10,9 +10,11 @@ offset_right = 64.0
 offset_bottom = 64.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+tooltip_text = "Бла бла бла типа описание способности"
 texture_normal = ExtResource("1_yq42r")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("1_ovgbl")
 
+[connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="resized" from="." to="." method="_on_resized"]

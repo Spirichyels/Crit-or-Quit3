@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AbilityCreator" load_steps=3 format=3 uid="uid://u1t5ddxs2714"]
+
+[ext_resource type="Script" uid="uid://rtjqfg1xauxn" path="res://Tres/AbillityCreator.gd" id="1_jja26"]
+[ext_resource type="Texture2D" uid="uid://lywx78m7hejn" path="res://Assets/SkillsIcons/skills/ship.png" id="1_wfaee"]
+
+[resource]
+script = ExtResource("1_jja26")
+id = 1
+name = "Ice_Storm"
+description = "Ну типа вжух и льда много"
+icon = ExtResource("1_wfaee")
+metadata/_custom_type_script = "uid://rtjqfg1xauxn"
