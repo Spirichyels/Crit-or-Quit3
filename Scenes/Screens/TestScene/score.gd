@@ -5,5 +5,5 @@ func _ready() -> void:
 	
 func _score_changed():
 	if Global.PLAYER_CURRENT_HP > 0:
-		print("Очков: ", Global.SCORE)
+		#print("Очков: ", Global.SCORE)
 		text = "Очков: "+ str(Global.SCORE)

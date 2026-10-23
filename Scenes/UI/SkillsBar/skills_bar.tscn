@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cf7owwxm233vb" path="res://Scenes/Entites/null_1.tscn" id="1_1mks6"]
 [ext_resource type="Script" uid="uid://q8k7s38vd0rh" path="res://Scenes/UI/SkillsBar/skills_bar.gd" id="1_6gike"]
-[ext_resource type="PackedScene" uid="uid://88ms5kpesgqf" path="res://Scenes/UI/SkillsBar/Skill/skill.tscn" id="2_6gike"]
+[ext_resource type="PackedScene" uid="uid://88ms5kpesgqf" path="res://Scenes/UI/SkillsBar/SkillButton/skill_button.tscn" id="2_6gike"]
 
 [node name="SkillsBar" type="HBoxContainer"]
 clip_contents = true
@@ -20,27 +20,27 @@ script = ExtResource("1_6gike")
 [node name="Null1" parent="." instance=ExtResource("1_1mks6")]
 layout_mode = 2
 
-[node name="Skill1" parent="." instance=ExtResource("2_6gike")]
+[node name="SkillButton1" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
 skill_id = 1
 
-[node name="Skill2" parent="." instance=ExtResource("2_6gike")]
+[node name="SkillButton2" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
 skill_id = 2
 
-[node name="Skill3" parent="." instance=ExtResource("2_6gike")]
+[node name="SkillButton3" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
 skill_id = 3
 
-[node name="Skill4" parent="." instance=ExtResource("2_6gike")]
+[node name="SkillButton4" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
 skill_id = 4
 
-[node name="Skill5" parent="." instance=ExtResource("2_6gike")]
+[node name="SkillButton5" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
 skill_id = 5
 
-[node name="Skill6" parent="." instance=ExtResource("2_6gike")]
+[node name="SkillButton6" parent="." instance=ExtResource("2_6gike")]
 layout_mode = 2
 skill_id = 6
 

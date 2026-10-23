@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AbilityCreator" load_steps=3 format=3 uid="uid://4rxfbbxgrge"]
+
+[ext_resource type="Texture2D" uid="uid://djriqhlxtt2h4" path="res://Assets/SkillsIcons/skills/auraofweakness.png" id="1_jcdew"]
+[ext_resource type="Script" uid="uid://rtjqfg1xauxn" path="res://Tres/AbillityCreator.gd" id="2_bl7su"]
+
+[resource]
+script = ExtResource("2_bl7su")
+id = 2
+name = "Heal_Ass"
+description = "Твоя задница нуждается "
+description_2 = "в исцелении"
+icon = ExtResource("1_jcdew")
+value = 2
+cooldown = 20.0
+type_target = 1
+type_damage = 2
+metadata/_custom_type_script = "uid://rtjqfg1xauxn"

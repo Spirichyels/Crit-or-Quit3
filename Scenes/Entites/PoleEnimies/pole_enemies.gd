@@ -11,20 +11,26 @@ extends Control
 
 @onready var timer_on_attack: Timer = $TimerOnAttack
 
+@onready var skills_bar: HBoxContainer = $"../SkillsBar"
+
+
 
 var enemies = []
-enum {
+enum ENEMY {
 	IDLE,
 	ATTACK,
 	TIME_BLOCK,
 	DAMAGE,
+	DAMAGE_SKILLS,
 	DEATH,
 	REBORN,
 	INITIAL
 }
 
 
+
 func _ready() -> void:
+	Signals.connect("get_damage_skill", Callable(self, "_getDamageSkills"))
 	enemies.push_front(enemie_9)
 	enemies.push_front(enemie_8)
 	enemies.push_front(enemie_7)
@@ -39,9 +45,13 @@ func _ready() -> void:
 	for i in enemies:
 		#print(i.size.x) #размер Enemy
 		i.update_sizes()
-		i.state = INITIAL
+		i.state = ENEMY.INITIAL
 		#print("onDeath: ",i.onDeath)
 		
+func _getDamageSkills(damage):
+	print("_getDamageSkills")
+	for enemy in enemies:
+		enemy.getDamageSkills(damage)
 
 func _process(delta: float) -> void:
 	#print(randi_range(0,8))
@@ -55,15 +65,16 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_on_attack_timeout() -> void:
+	#print(timer_on_attack.wait_time)
 	timer_on_attack.wait_time = randi_range(1,8)
-	print("_on_timer_on_attack_timeout")
+	#print("_on_timer_on_attack_timeout")
 	#enemies[randi_range(0,8)].state = ATTACK
 	var enemy = enemies[randi_range(0,8)]
 	#var enemy = enemies[0]
 	
 	if enemy.onDeath:
 		if enemy.onReady:
-			enemy.state = REBORN
+			enemy.state = ENEMY.REBORN
 	
 	pass # Replace with function body.
 

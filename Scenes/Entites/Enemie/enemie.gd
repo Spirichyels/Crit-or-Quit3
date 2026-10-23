@@ -28,10 +28,13 @@ enum {
 	ATTACK,
 	TIME_BLOCK,
 	DAMAGE,
+	DAMAGE_SKILLS,
 	DEATH,
 	REBORN,
 	INITIAL
 }
+
+
 
 var current_hp = -1:
 	set(value):
@@ -50,7 +53,8 @@ var state: int = INITIAL:
 	set(value):
 		state = value
 		if (id_buttons == 1):
-			print(state)
+			#print(state)
+			pass
 		match state:
 			IDLE:
 				#print(state)
@@ -76,6 +80,10 @@ var state: int = INITIAL:
 			DAMAGE:
 				#damage_state()
 				pass
+			DAMAGE_SKILLS:
+				if not onDeath:
+					damage_skills_state()
+				pass
 			DEATH:
 				if not onDeath:
 					death_state()
@@ -84,7 +92,7 @@ var state: int = INITIAL:
 					fix_state(state)
 				pass
 			REBORN:
-				print("onReady: ", onReady, "onDeath: " ,onDeath)
+				#print("onReady: ", onReady, "onDeath: " ,onDeath)
 				if onReady:
 					reborn_state()
 				else:
@@ -119,7 +127,7 @@ func death_state():
 	onReady = true
 	pass
 func reborn_state():
-	print("reborn_state")
+	#print("reborn_state")
 	onVisible = false
 	
 	animated_sprite_2d.stop()
@@ -136,9 +144,12 @@ func initial_state():
 	animated_sprite_2d.stop()
 	onDeath = true
 	onVisible = false
+func damage_skills_state():
+	pass
 	
 func fix_state(_state):
-	print(state ," не сработал")
+	#print(state ," не сработал")
+	pass
 
 func _ready() -> void:
 	label.text = str(id_buttons)
@@ -169,10 +180,11 @@ func _on_timer_to_block_timeout() -> void:
 		_stop_block()
 		if !isBlocking:
 			if not onDeath:
-				print(id_buttons,": Нанес урон")
+				#print(id_buttons,": Нанес урон")
 				Global.PLAYER_CURRENT_HP -= 1
 			else:
-				print(id_buttons,": Пытается бить мертвым, но у него ничего не выходит")
+				#print(id_buttons,": Пытается бить мертвым, но у него ничего не выходит")
+				pass
 		isBlocking = false
 			
 	pass # Replace with function body.
@@ -196,11 +208,14 @@ func _handle_click():
 		if state == TIME_BLOCK:
 			isBlocking = true
 			_stop_block()
-			print("Увернулся от ", id_buttons)
+			#print("Увернулся от ", id_buttons)
 		else:
 			current_hp -= 1
 		isBlocking = false
 
+func getDamageSkills(damage):
+	current_hp -= damage
+	
 
 func _on_timer_to_attack_timeout() -> void:
 	if state == IDLE and onDeath == false and onReady == false:

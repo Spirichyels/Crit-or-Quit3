@@ -1,30 +1,35 @@
 extends HBoxContainer
 
-@onready var skill_1: TextureButton = $Skill1
-@onready var skill_2: TextureButton = $Skill2
-@onready var skill_3: TextureButton = $Skill3
-@onready var skill_4: TextureButton = $Skill4
-@onready var skill_5: TextureButton = $Skill5
-@onready var skill_6: TextureButton = $Skill6
+@onready var skill_Button_1: TextureButton = $SkillButton1
+@onready var skill_Button_2: TextureButton = $SkillButton2
+@onready var skill_Button_3: TextureButton = $SkillButton3
+@onready var skill_Button_4: TextureButton = $SkillButton4
+@onready var skill_Button_5: TextureButton = $SkillButton5
+@onready var skill_Button_6: TextureButton = $SkillButton6
 
 
 
 
-var skills = []
+var skills_Button = []
 
 
 func _ready() -> void:
 	
-	skills.push_front(skill_6)
-	skills.push_front(skill_5)
-	skills.push_front(skill_4)
-	skills.push_front(skill_3)
-	skills.push_front(skill_2)
-	skills.push_front(skill_1)
+	#skills_Button.push_front(skill_Button_6)
+	#skills_Button.push_front(skill_Button_5)
+	#skills_Button.push_front(skill_Button_4)
+	skills_Button.push_front(skill_Button_3)
+	skills_Button.push_front(skill_Button_2)
+	skills_Button.push_front(skill_Button_1)
 	
 	await get_tree().process_frame
-	skills[0].setTextures(skills[0])
-	for i in skills:
+	#print(Skills.skills[0].icon.resource_path)
+
+	skills_Button[0].setSkill(0)
+	skills_Button[1].setSkill(1)
+	skills_Button[2].setSkill(2)
+	
+	for i in skills_Button:
 		#print(i.size.x) #размер Enemy
 		pass
 

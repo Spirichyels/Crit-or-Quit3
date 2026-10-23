@@ -1,12 +1,14 @@
 [gd_resource type="Resource" script_class="AbilityCreator" load_steps=3 format=3 uid="uid://co88pcn5nawr5"]
 
-[ext_resource type="Texture2D" uid="uid://bkrinm8skmiqk" path="res://Assets/SkillsIcons/skills/flamethrower.png" id="1_i5fvk"]
+[ext_resource type="Texture2D" uid="uid://bx5pnwpj1g230" path="res://Assets/SkillsIcons/skills/biceps.png" id="1_i5fvk"]
 [ext_resource type="Script" uid="uid://rtjqfg1xauxn" path="res://Tres/AbillityCreator.gd" id="1_ihlqw"]
 
 [resource]
 script = ExtResource("1_ihlqw")
 name = "Fire_Storm"
-value = 20
 description = "Ну типа огненный удар"
 icon = ExtResource("1_i5fvk")
+value = 10
+cooldown = 15.0
+type_damage = 1
 metadata/_custom_type_script = "uid://rtjqfg1xauxn"

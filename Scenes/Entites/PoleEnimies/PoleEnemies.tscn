@@ -88,7 +88,7 @@ size_flags_stretch_ratio = 0.75
 id_buttons = 1
 
 [node name="TimerOnAttack" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 2.9
 autostart = true
 
 [node name="TimerOnDiffculty" type="Timer" parent="."]

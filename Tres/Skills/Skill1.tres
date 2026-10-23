@@ -9,4 +9,7 @@ id = 1
 name = "Ice_Storm"
 description = "Ну типа вжух и льда много"
 icon = ExtResource("1_wfaee")
+value = 15
+cooldown = 9.0
+type_target = 1
 metadata/_custom_type_script = "uid://rtjqfg1xauxn"
